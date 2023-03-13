@@ -1,8 +1,14 @@
-export function ImageDetailsPage({ setShowDetails }) {
+export function ImageDetailsPage({ hideDetails, selectedItem }) {
 	return (
 		<>
-			<button onClick={() => setShowDetails(false)}>Back</button>
-			<p>This is the Image Details Page</p>
+			<button onClick={() => hideDetails(false)}>Back</button>
+			<p>
+				{selectedItem.title} by {selectedItem.artist_title}
+			</p>
+			<img
+				alt={selectedItem.thumbnail.alt_text}
+				src={`https://www.artic.edu/iiif/2/${selectedItem.image_id}/full/843,/0/default.jpg`}
+			/>
 		</>
 	);
 }
