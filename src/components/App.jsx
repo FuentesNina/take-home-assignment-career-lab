@@ -47,8 +47,11 @@ export function App() {
 					<ul>
 						{results.map((result) => {
 							return (
-								<li key={result.id}>
-									<button onClick={() => displayDetails(result)}>
+								<li key={result.id} className="listItem">
+									<button
+										class="listItem"
+										onClick={() => displayDetails(result)}
+									>
 										{result.title}
 										{result.artist_title && ` by ${result.artist_title}`}
 									</button>
