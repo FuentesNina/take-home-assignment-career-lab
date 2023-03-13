@@ -3,8 +3,12 @@ import './App.css';
 import { searchArtworks } from '../utils/api';
 import { SearchForm } from './SearchForm';
 import { Footer } from './Footer';
+import { ImageDetailsPage } from './ImageDetailsPage';
+import { useState } from 'react';
 
 export function App() {
+	const [showDetails, setShowDetails] = useState(false);
+
 	function onSearchSubmit(query) {
 		// Search for the users's query.
 		// TODO: render the results, instead of logging them to the console.
@@ -20,7 +24,11 @@ export function App() {
 	return (
 		<div className="App">
 			<h1>TCL Career Lab Art Finder</h1>
-			<SearchForm onSearchSubmit={onSearchSubmit} />
+			{showDetails ? (
+				<ImageDetailsPage setShowDetails={setShowDetails} />
+			) : (
+				<SearchForm onSearchSubmit={onSearchSubmit} />
+			)}
 			<Footer />
 		</div>
 	);
