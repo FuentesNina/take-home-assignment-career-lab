@@ -49,7 +49,7 @@ export function App() {
 							return (
 								<li key={result.id} className="listItem">
 									<button
-										class="listItem"
+										className="listItem"
 										onClick={() => displayDetails(result)}
 									>
 										{result.title}

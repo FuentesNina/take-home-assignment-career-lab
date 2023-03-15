@@ -3,7 +3,8 @@ export function ImageDetailsPage({ hideDetails, selectedItem }) {
 		<>
 			<button onClick={() => hideDetails(false)}>Back</button>
 			<p>
-				{selectedItem.title} by {selectedItem.artist_title}
+				{selectedItem.title}
+				{selectedItem.artist_title && ` by ${selectedItem.artist_title}`}
 			</p>
 			<img
 				alt={selectedItem.thumbnail.alt_text}
